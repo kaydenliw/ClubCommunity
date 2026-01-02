@@ -131,11 +131,11 @@
                                    value="{{ $txn->id }}" {{ $txn->synced_to_accounting ? 'disabled' : '' }}>
                         </td>
                         <td class="px-4 py-3">
-                            <div class="text-sm font-medium text-gray-900">{{ $txn->member->name }}</div>
-                            <div class="text-xs text-gray-500">{{ $txn->member->email }}</div>
+                            <div class="text-sm font-medium text-gray-900">{{ $txn->member->name ?? 'N/A' }}</div>
+                            <div class="text-xs text-gray-500">{{ $txn->member->email ?? 'Member not found' }}</div>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="text-sm text-gray-900">{{ $txn->organization->name }}</span>
+                            <span class="text-sm text-gray-900">{{ $txn->organization->name ?? 'N/A' }}</span>
                         </td>
                         <td class="px-4 py-3">
                             <span class="text-sm font-semibold {{ $txn->type == 'payment' ? 'text-green-600' : 'text-red-600' }}">
